@@ -58,6 +58,12 @@ public class LeagueMapperTest {
 
 
     @Test
+    public void selectBySidAndIdnumber() {
+        League league = mapper.selectBySidAndIdnumber(studentId, idnumber);
+        System.out.println(league);
+    }
+
+    @Test
     public void insert() {
         LeagueEntity entity = new LeagueEntity();
         entity.setLeagueId(leagueId);
