@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zqtaotao.adminserver.dao.mapper.LeagueMapper">
+
+    <!--表名 -->
+    <sql id="tableName">
+        oa_league
+    </sql>
+
+    <!-- 字段 -->
+    <sql id="Field">
+        LEAGUE_ID,
+        COLLEGE,
+        MAJOR,
+        CLASSNAME,
+        STUDENTID,
+        LNAME,
+        SEX,
+        DATE,
+        IDNUMBER,
+        NATION,
+        NATIVEPLACE,
+        POLITICALSTATUS,
+        YEARS,
+        PLACE,
+        LETTER,
+        ZHENG,
+        MEMBERPROFILE,
+        PHONE,
+        QQ,
+        REMARK,
+        REGISTER,
+        CREATE_TIME,
+        LAST_EDIT_TIME
+    </sql>
+
+    <!-- 字段值 -->
+    <sql id="FieldValue">
+        #{LEAGUEID},
+        #{COLLEGE},
+        #{MAJOR},
+        #{CLASSNAME},
+        #{STUDENTID},
+        #{LNAME},
+        #{SEX},
+        #{DATE},
+        #{IDNUMBER},
+        #{NATION},
+        #{NATIVEPLACE},
+        #{POLITICALSTATUS},
+        #{YEARS},
+        #{PLACE},
+        #{LETTER},
+        #{ZHENG},
+        #{MEMBERPROFILE},
+        #{PHONE},
+        #{QQ},
+        #{REMARK},
+        #{REGISTER},
+        #{CREATETIME},
+        #{LASTEDITTIME}
+    </sql>
+    <!-- 新增-->
+    <insert id="insert" parameterType="cn.zqtaotao.adminserver.entity.League">
+        insert into
+        <include refid="tableName"></include>
+        (
+          <include refid="Field"></include>
+        ) values (
+          <include refid="FieldValue"></include>
+        )
+    </insert>
+
+    <!-- 新增-->
+    <!--<insert id="insert" parameterType="cn.zqtaotao.adminserver.entity.League">-->
+        <!--insert into-->
+        <!--<include refid="tableName"></include>-->
+        <!--(-->
+        <!--COLLEGE-->
+        <!--) values (-->
+        <!--#{COLLEGE}-->
+        <!--)-->
+    <!--</insert>-->
+
+    <!-- 修改 -->
+    <update id="update" parameterType="cn.zqtaotao.adminserver.entity.League">
+        update
+        <include refid="tableName"></include>
+        set
+        COLLEGE = #{COLLEGE},
+        MAJOR = #{MAJOR},
+        CLASSNAME = #{CLASSNAME},
+        STUDENTID = #{STUDENTID},
+        LNAME = #{LNAME},
+        SEX = #{SEX},
+        DATE = #{DATE},
+        IDNUMBER = #{IDNUMBER},
+        NATION = #{NATION},
+        NATIVEPLACE = #{NATIVEPLACE},
+        POLITICALSTATUS = #{POLITICALSTATUS},
+        YEARS = #{YEARS},
+        PLACE = #{PLACE},
+        LETTER = #{LETTER},
+        ZHENG = #{ZHENG},
+        MEMBERPROFILE = #{MEMBERPROFILE},
+        PHONE = #{PHONE},
+        QQ = #{QQ},
+        REMARK = #{REMARK},
+        REGISTER = #{REGISTER},
+        LEAGUE_ID = LEAGUE_ID
+        where
+        LEAGUE_ID = #{LEAGUE_ID}
+    </update>
+
+    <select id="selectByStudentId" parameterType="java.lang.String" resultType="cn.zqtaotao.adminserver.entity.League">
+        <!--SELECT * FROM-->
+        <!--<include refid="tableName"></include>-->
+        select * from oa_league
+        WHERE STUDENTID=#{id}
+    </select>
+
+
+    <select id="selectByIdnumber" parameterType="java.lang.String" resultType="cn.zqtaotao.adminserver.entity.League">
+        SELECT * FROM
+        <include refid="tableName"></include>
+        WHERE IDNUMBER=#{IDNUMBER}
+    </select>
+
+    <select id="selectBySidAndIdnumber" parameterType="java.lang.String" resultType="cn.zqtaotao.adminserver.entity.League">
+        SELECT * FROM
+        <include refid="tableName"></include>
+        WHERE STUDENTID=#{sid} AND IDNUMBER=#{idnumber}
+    </select>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultType="cn.zqtaotao.adminserver.entity.League">
+        SELECT * FROM
+        <include refid="tableName"></include>
+        WHERE LEAGUE_ID=#{LEAGUE_ID}
+    </select>
+
+</mapper>

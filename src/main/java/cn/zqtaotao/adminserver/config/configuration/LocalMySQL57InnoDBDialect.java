@@ -21,9 +21,6 @@ public class LocalMySQL57InnoDBDialect extends MySQL5Dialect {
 
     /**
      * 来自
-     *
-     * @return
-     * @see org.hibernate.dialect.MySQL57InnoDBDialect
      */
     @Override
     protected MySQLStorageEngine getDefaultMySQLStorageEngine() {
@@ -44,11 +41,6 @@ public class LocalMySQL57InnoDBDialect extends MySQL5Dialect {
         registerHibernateType(Types.BIGINT, StandardBasicTypes.LONG.getName());
     }
 
-    /**
-     * @return supports IN clause row value expressions
-     * @see <a href="https://dev.mysql.com/worklog/task/?id=7019">MySQL 5.7 work log</a>
-     * @see org.hibernate.dialect.MySQL57InnoDBDialect
-     */
     @Override
     public boolean supportsRowValueConstructorSyntaxInInList() {
         return true;

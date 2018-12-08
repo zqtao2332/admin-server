@@ -38,7 +38,7 @@ public class DataSourceConfig {
         try {
             String ip = env.getProperty("db.ip", "127.0.0.1");
             String port = env.getProperty("db.port", "3306");
-            String name = env.getProperty("db.name", "ddd");
+            String name = env.getProperty("db.name", "ddds");
             String user = env.getProperty("db.username", "root");
             String pass = env.getProperty("db.password", "123456");
             DruidDataSource druidDataSource = DruidDataSourceBuilder.create().build();
