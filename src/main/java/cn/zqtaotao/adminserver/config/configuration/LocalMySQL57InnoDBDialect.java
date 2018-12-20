@@ -12,7 +12,6 @@ import java.sql.Types;
 /**
  * 此类包含如下两个已过期的类的内容
  *
- * @author wuwenbin
  * @see org.hibernate.dialect.MySQL5InnoDBDialect
  * @see org.hibernate.dialect.MySQL57InnoDBDialect
  * 使用InnoDb引擎和事物，同时增加一个类型匹配规则（使BigInt返回Long类型）

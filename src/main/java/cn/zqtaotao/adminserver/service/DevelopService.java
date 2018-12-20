@@ -6,5 +6,5 @@ public interface DevelopService {
 
     int addDevelop(DevelopEntity developEntity);
 
-    DevelopEntity selectLeagueByStudentId(String sid);
+    DevelopEntity selectDevelopByStudentId(String sid);
 }

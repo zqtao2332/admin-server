@@ -4,9 +4,9 @@ server:
 #项目配置
 spring:
   profiles:
-#    active: prod
+    active: prod
   # 加载开发环境配置文件application-dev.properties
-    active: dev
+#    active: dev
   application:
     # 工程名
     name: AdminServer

@@ -2,12 +2,14 @@ package cn.zqtaotao.adminserver.dao.mapper;
 
 import cn.hutool.core.lang.UUID;
 import cn.zqtaotao.adminserver.entity.Develop;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+@Ignore
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class DevelopMapperTest {

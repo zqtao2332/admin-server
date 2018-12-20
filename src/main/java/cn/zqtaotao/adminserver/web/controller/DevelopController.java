@@ -22,12 +22,12 @@ public class DevelopController {
     @RequestMapping(value = "/selectdevelopbysid")
     public RespBean selectDevelopById(String sid){
 
-        DevelopEntity entity = service.selectLeagueByStudentId(sid);
+        DevelopEntity entity = service.selectDevelopByStudentId(sid);
 
-        if (entity != null){
-            return RespBean.ok("success", entity);
+        if (entity == null){
+            return RespBean.error("false");
         }
-        return RespBean.error("false");
+        return RespBean.ok("success", entity);
     }
 
     @RequestMapping(value = "/addnewdevelop", method = RequestMethod.POST)

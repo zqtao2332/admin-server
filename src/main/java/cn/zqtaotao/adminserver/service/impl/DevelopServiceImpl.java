@@ -31,10 +31,10 @@ public class DevelopServiceImpl implements DevelopService {
     }
 
     @Override
-    public DevelopEntity selectLeagueByStudentId(String sid) {
-
+    public DevelopEntity selectDevelopByStudentId(String sid) {
         Develop develop = mapper.selectByStudentId(sid);
         if (develop == null) return null;
         return DevelopEntityChangeUtil.changeDevelopToDevelopEntity(develop);
     }
+
 }

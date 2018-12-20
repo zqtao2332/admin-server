@@ -4,11 +4,12 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
 @Setter
+@Getter
 @ToString
-public class DevelopEntity {
+public class ExcellentEntity {
 
+    private String excellentId;
     private String college;
     private String major;
     private String className;
@@ -17,22 +18,18 @@ public class DevelopEntity {
     private String sex;
     private String date;
     private String idnumber;
-    /**
-     * 原字段为native
-     * native可能是关键字，无法使用
-     */
     private String nation;
     private String nativePlace;
-    private String applyTime;
-    private String time;
+    private String politicalStatus;
+    private String years;
+    private String adtime;
     private String honor;
-    private String sum;
+    private String yesOrNot;
     private String phone;
     private String qq;
+    private String sum;
     private String remark;
-    private String developId;
     private String createTime;
     private String lastEditTime;
-
 
 }

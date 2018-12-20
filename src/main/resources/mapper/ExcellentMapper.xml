@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zqtaotao.adminserver.dao.mapper.ExcellentMapper">
+
+    <!--表名 -->
+    <sql id="tableName">
+        oa_excellent
+    </sql>
+
+    <!-- 字段 -->
+    <sql id="Field">
+		COLLEGE,
+		MAJOR,
+		CLASSNAME,
+		STUDENTID,
+		LNAME,
+		SEX,
+		DATE,
+		IDNUMBER,
+		NATION,
+		NATIVEPLACE,
+		POLITICALSTATUS,
+		YEARS,
+		ADTIME,
+		HONOR,
+		YESORNOT,
+		PHONE,
+		QQ,
+		SUM,
+		REMARK,
+		CREATE_TIME,
+		LAST_EDIT_TIME,
+		EXCELLENT_ID
+	</sql>
+
+    <!-- 字段值 -->
+    <sql id="FieldValue">
+		#{COLLEGE},
+		#{MAJOR},
+		#{CLASSNAME},
+		#{STUDENTID},
+		#{LNAME},
+		#{SEX},
+		#{DATE},
+		#{IDNUMBER},
+		#{NATION},
+		#{NATIVEPLACE},
+		#{POLITICALSTATUS},
+		#{YEARS},
+		#{ADTIME},
+		#{HONOR},
+		#{YESORNOT},
+		#{PHONE},
+		#{QQ},
+		#{SUM},
+		#{REMARK},
+		#{CREATETIME},
+		#{LASTEDITTIME},
+		#{EXCELLENTID}
+	</sql>
+
+    <!--新增-->
+    <insert id="insert" parameterType="cn.zqtaotao.adminserver.entity.Excellent">
+        insert into
+        <include refid="tableName"></include>
+        (
+        <include refid="Field"></include>
+        ) values (
+        <include refid="FieldValue"></include>
+        )
+    </insert>
+
+    <select id="selectBySidAndIdnumber" parameterType="java.lang.String"
+            resultType="cn.zqtaotao.adminserver.entity.Excellent">
+        SELECT * FROM
+        <include refid="tableName"></include>
+        WHERE STUDENTID=#{sid} AND IDNUMBER=#{idnumber}
+    </select>
+
+    <select id="selectByStudentId" parameterType="java.lang.String" resultType="cn.zqtaotao.adminserver.entity.Excellent">
+        SELECT * FROM
+        <include refid="tableName"></include>
+        WHERE STUDENTID=#{sid}
+    </select>
+</mapper>
